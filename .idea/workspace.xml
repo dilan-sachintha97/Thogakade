@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="set ui for customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/CustomerManagementForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/CustomerManagementForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/DashBordForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/DashBordForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +78,34 @@
       <option name="presentableId" value="Default" />
       <updated>1667647525693</updated>
       <workItem from="1667647527294" duration="1621000" />
-      <workItem from="1667649277584" duration="3189000" />
+      <workItem from="1667649277584" duration="5871000" />
     </task>
+    <task id="LOCAL-00001" summary="set ui for customer">
+      <created>1667655387696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667655387696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="set ui for customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="set ui for customer" />
   </component>
 </project>
