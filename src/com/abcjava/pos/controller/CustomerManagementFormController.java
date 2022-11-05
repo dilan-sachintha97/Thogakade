@@ -17,11 +17,11 @@ public class CustomerManagementFormController {
     public TextField txtAddress;
     public TextField txtSalary;
     public TableView<CustomerTm> tblCustomerDetails;
-    public TableColumn colId;
-    public TableColumn colName;
-    public TableColumn colAddress;
-    public TableColumn colSalary;
-    public TableColumn colOptions;
+    public TableColumn<CustomerTm,String> colId;
+    public TableColumn<CustomerTm,String> colName;
+    public TableColumn<CustomerTm,String> colAddress;
+    public TableColumn<CustomerTm,Double> colSalary;
+    public TableColumn<CustomerTm,Button> colOptions;
 
     public void initialize(){
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -32,6 +32,7 @@ public class CustomerManagementFormController {
     }
 
     private void searchCustomers(){
+        // set value to table
         ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
         for (Customer c : Database.customerList){
             Button button = new Button("Delete");
@@ -39,8 +40,26 @@ public class CustomerManagementFormController {
                     c.getId(),c.getName(),c.getAddress(),c.getSalary(),button
             );
             tmList.add(customerTm);
+
+            button.setOnAction(event -> {
+               // System.out.println(c.getName());
+                boolean isDeleted = Database.customerList.remove(c);
+                if(isDeleted){
+                    searchCustomers();
+                    new Alert(Alert.AlertType.INFORMATION, "Customer Deleted").show();
+                }else{
+                    new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                }
+            });
         }
         tblCustomerDetails.setItems(tmList);
+    }
+
+    private void clearField(){
+        txtId.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtSalary.clear();
     }
 
     public void btnSaveCustomerOnAction(ActionEvent actionEvent) {
@@ -51,6 +70,7 @@ public class CustomerManagementFormController {
         boolean isSaved = Database.customerList.add(customer);  // save customer in arrayList
         if(isSaved){
             searchCustomers();
+            clearField();
             new Alert(Alert.AlertType.INFORMATION, "Customer Saved").show();
         }else{
             new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
