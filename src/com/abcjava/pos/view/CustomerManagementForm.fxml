@@ -39,13 +39,13 @@
          </cursor>
       </JFXButton>
       <TextField layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="457.0" promptText="Search Customer" />
-      <TableView layoutX="14.0" layoutY="138.0" prefHeight="228.0" prefWidth="627.0">
+      <TableView fx:id="tblCustomerDetails" layoutX="14.0" layoutY="138.0" prefHeight="228.0" prefWidth="627.0">
         <columns>
-          <TableColumn prefWidth="95.0" text="ID" />
-          <TableColumn prefWidth="149.0" text="Name" />
-            <TableColumn prefWidth="157.0" text="Address" />
-            <TableColumn prefWidth="129.0" text="Salary" />
-            <TableColumn prefWidth="96.0" text="Options" />
+          <TableColumn fx:id="colId" prefWidth="95.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="149.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="157.0" text="Address" />
+            <TableColumn fx:id="colSalary" prefWidth="129.0" text="Salary" />
+            <TableColumn fx:id="colOptions" prefWidth="96.0" text="Options" />
         </columns>
       </TableView>
    </children>
