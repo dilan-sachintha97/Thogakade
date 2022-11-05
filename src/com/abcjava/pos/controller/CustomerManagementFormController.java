@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class CustomerManagementFormController {
@@ -23,7 +24,11 @@ public class CustomerManagementFormController {
     public TableColumn colOptions;
 
     public void initialize(){
-        searchCustomers();
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        colOptions.setCellValueFactory(new PropertyValueFactory<>("button"));
     }
 
     private void searchCustomers(){
@@ -43,8 +48,9 @@ public class CustomerManagementFormController {
         Customer customer = new Customer(
                 txtId.getText(),txtName.getText(),txtAddress.getText(),Double.parseDouble(txtSalary.getText())
         );
-        boolean isSaved = Database.customerList.add(customer);
+        boolean isSaved = Database.customerList.add(customer);  // save customer in arrayList
         if(isSaved){
+            searchCustomers();
             new Alert(Alert.AlertType.INFORMATION, "Customer Saved").show();
         }else{
             new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
