@@ -37,7 +37,7 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </JFXButton>
-      <TextField layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="457.0" promptText="Search Customer" />
+      <TextField fx:id="txtSearchCustomer" layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="457.0" promptText="Search Customer" />
       <TableView fx:id="tblCustomerDetails" layoutX="14.0" layoutY="138.0" prefHeight="228.0" prefWidth="627.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="95.0" text="ID" />
