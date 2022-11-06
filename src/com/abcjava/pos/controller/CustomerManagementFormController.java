@@ -3,6 +3,7 @@ package com.abcjava.pos.controller;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.view.tm.CustomerTm;
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,41 +20,58 @@ public class CustomerManagementFormController {
     public TextField txtAddress;
     public TextField txtSalary;
     public TableView<CustomerTm> tblCustomerDetails;
-    public TableColumn<CustomerTm,String> colId;
-    public TableColumn<CustomerTm,String> colName;
-    public TableColumn<CustomerTm,String> colAddress;
-    public TableColumn<CustomerTm,Double> colSalary;
-    public TableColumn<CustomerTm,Button> colOptions;
+    public TableColumn<CustomerTm, String> colId;
+    public TableColumn<CustomerTm, String> colName;
+    public TableColumn<CustomerTm, String> colAddress;
+    public TableColumn<CustomerTm, Double> colSalary;
+    public TableColumn<CustomerTm, Button> colOptions;
+    public JFXButton btnSaveCustomer;
 
-    public void initialize(){
+    public void initialize() {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colOptions.setCellValueFactory(new PropertyValueFactory<>("button"));
+
+        tblCustomerDetails.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+                    if(newValue != null){  //null != newValue  <- more speed
+                        setData(newValue);
+                    }
+
+        });
     }
 
-    private void searchCustomers(){
+    private void setData(CustomerTm tm) {
+        txtId.setText(tm.getId());
+        txtName.setText(tm.getName());
+        txtAddress.setText(tm.getAddress());
+        txtSalary.setText(String.valueOf(tm.getSalary()));
+        btnSaveCustomer.setText("Update Customer");
+    }
+
+    private void searchCustomers() {
         // set value to table
         ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
-        for (Customer c : Database.customerList){
+        for (Customer c : Database.customerList) {
             Button button = new Button("Delete");
             CustomerTm customerTm = new CustomerTm(
-                    c.getId(),c.getName(),c.getAddress(),c.getSalary(),button
+                    c.getId(), c.getName(), c.getAddress(), c.getSalary(), button
             );
             tmList.add(customerTm);
 
             button.setOnAction(event -> {
-               // System.out.println(c.getName());
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure  want to delete this customer ?",
+                // System.out.println(c.getName());
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure  want to delete this customer ?",
                         ButtonType.YES, ButtonType.NO);
                 Optional<ButtonType> buttonType = alert.showAndWait();
-                if(buttonType.get() ==ButtonType.YES ){
+                if (buttonType.get() == ButtonType.YES) {
                     boolean isDeleted = Database.customerList.remove(c);
-                    if(isDeleted){
+                    if (isDeleted) {
                         searchCustomers();
                         new Alert(Alert.AlertType.INFORMATION, "Customer Deleted").show();
-                    }else{
+                    } else {
                         new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
                     }
                 }
@@ -63,7 +81,7 @@ public class CustomerManagementFormController {
         tblCustomerDetails.setItems(tmList);
     }
 
-    private void clearField(){
+    private void clearField() {
         txtId.clear();
         txtName.clear();
         txtAddress.clear();
@@ -73,15 +91,33 @@ public class CustomerManagementFormController {
     public void btnSaveCustomerOnAction(ActionEvent actionEvent) {
 
         Customer customer = new Customer(
-                txtId.getText(),txtName.getText(),txtAddress.getText(),Double.parseDouble(txtSalary.getText())
+                txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText())
         );
-        boolean isSaved = Database.customerList.add(customer);  // save customer in arrayList
-        if(isSaved){
-            searchCustomers();
-            clearField();
-            new Alert(Alert.AlertType.INFORMATION, "Customer Saved").show();
-        }else{
-            new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+
+        if (btnSaveCustomer.getText().equalsIgnoreCase("Save Customer")) {
+            // save customer in arrayList
+            boolean isSaved = Database.customerList.add(customer);
+            if (isSaved) {
+                searchCustomers();
+                clearField();
+                new Alert(Alert.AlertType.INFORMATION, "Customer Saved").show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+            }
+        } else {
+            //update customer
+            for (int i = 0; i < Database.customerList.size(); i++) {
+                if (txtId.getText().equalsIgnoreCase(Database.customerList.get(i).getId())) {
+                    Database.customerList.get(i).setName(txtName.getText());
+                    Database.customerList.get(i).setAddress(txtAddress.getText());
+                    Database.customerList.get(i).setSalary(Double.parseDouble(txtSalary.getText()));
+
+                    searchCustomers();
+                    new Alert(Alert.AlertType.INFORMATION, "Customer Updated").show();
+                }
+            }
+
+
         }
     }
 }
