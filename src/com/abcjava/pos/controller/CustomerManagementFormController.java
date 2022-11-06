@@ -7,10 +7,15 @@ import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class CustomerManagementFormController {
@@ -114,11 +119,21 @@ public class CustomerManagementFormController {
 
                     searchCustomers();
                     new Alert(Alert.AlertType.INFORMATION, "Customer Updated").show();
+                    clearField();
                 }
             }
 
 
         }
+    }
+
+    public void btnAddNewCustomer(ActionEvent actionEvent) {
+        btnSaveCustomer.setText("Save Customer");
+    }
+
+    public void btnBackToHome(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) customerManagementContext.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashBordForm.fxml"))));
     }
 }
 
