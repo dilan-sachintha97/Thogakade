@@ -10,6 +10,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
+import java.util.Optional;
+
 public class CustomerManagementFormController {
     public AnchorPane customerManagementContext;
     public TextField txtId;
@@ -43,13 +45,19 @@ public class CustomerManagementFormController {
 
             button.setOnAction(event -> {
                // System.out.println(c.getName());
-                boolean isDeleted = Database.customerList.remove(c);
-                if(isDeleted){
-                    searchCustomers();
-                    new Alert(Alert.AlertType.INFORMATION, "Customer Deleted").show();
-                }else{
-                    new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure  want to delete this customer ?",
+                        ButtonType.YES, ButtonType.NO);
+                Optional<ButtonType> buttonType = alert.showAndWait();
+                if(buttonType.get() ==ButtonType.YES ){
+                    boolean isDeleted = Database.customerList.remove(c);
+                    if(isDeleted){
+                        searchCustomers();
+                        new Alert(Alert.AlertType.INFORMATION, "Customer Deleted").show();
+                    }else{
+                        new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                    }
                 }
+
             });
         }
         tblCustomerDetails.setItems(tmList);
