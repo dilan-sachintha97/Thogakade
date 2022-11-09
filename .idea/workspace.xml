@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="Add new customer to table">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="search customer from table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/CustomerManagementForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/CustomerManagementForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/ItemManagementForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/ItemManagementForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/tm/CustomerTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/CustomerTm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,27 @@
       <workItem from="1667647527294" duration="1621000" />
       <workItem from="1667649277584" duration="15718000" />
       <workItem from="1667672405790" duration="30000" />
-      <workItem from="1667707883006" duration="7951000" />
+      <workItem from="1667707883006" duration="8845000" />
+      <workItem from="1667724260639" duration="650000" />
+      <workItem from="1667725815926" duration="36000" />
+      <workItem from="1667727347962" duration="131000" />
+      <workItem from="1667728304228" duration="125000" />
+      <workItem from="1667729399416" duration="25000" />
+      <workItem from="1667729668244" duration="158000" />
+      <workItem from="1667730247087" duration="406000" />
+      <workItem from="1667750426589" duration="89000" />
+      <workItem from="1667751553810" duration="234000" />
+      <workItem from="1667793131372" duration="45000" />
+      <workItem from="1667793433783" duration="36000" />
+      <workItem from="1667793648709" duration="136000" />
+      <workItem from="1667793995884" duration="15000" />
+      <workItem from="1667795065972" duration="393000" />
+      <workItem from="1667982929381" duration="56000" />
+      <workItem from="1667983353180" duration="271000" />
+      <workItem from="1667984725413" duration="356000" />
+      <workItem from="1667987253155" duration="101000" />
+      <workItem from="1667988657399" duration="176000" />
+      <workItem from="1667989596166" duration="1557000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -161,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667721723965</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="search customer from table">
+      <created>1667723566445</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667723566445</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +219,7 @@
     <MESSAGE value="delete customer from table" />
     <MESSAGE value="update customer from table" />
     <MESSAGE value="Add new customer to table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new customer to table" />
+    <MESSAGE value="search customer from table" />
+    <option name="LAST_COMMIT_MESSAGE" value="search customer from table" />
   </component>
 </project>

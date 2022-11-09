@@ -2,7 +2,7 @@ package com.abcjava.pos.controller;
 
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
-import com.abcjava.pos.view.tm.CustomerTm;
+import com.abcjava.pos.modal.tm.CustomerTm;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.abcjava.pos.view.tm;
+package com.abcjava.pos.modal.tm;
 
 import javafx.scene.control.Button;
 
