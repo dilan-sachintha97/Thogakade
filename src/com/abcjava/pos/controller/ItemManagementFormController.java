@@ -2,9 +2,16 @@ package com.abcjava.pos.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+
+import java.io.IOException;
 
 public class ItemManagementFormController {
     public TextField txtCode;
@@ -18,11 +25,15 @@ public class ItemManagementFormController {
     public TableColumn colDescription;
     public TableColumn colUnitPrice;
     public TableColumn colOptions;
+    public AnchorPane itemManagementContext;
 
-    public void btnBackToHome(ActionEvent actionEvent) {
+    public void btnBackToHome(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) itemManagementContext.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashBordForm.fxml"))));
     }
 
-    public void btnAddNewitem(ActionEvent actionEvent) {
+    public void btnAddNewItem(ActionEvent actionEvent) {
+
     }
 
     public void btnSaveItemOnAction(ActionEvent actionEvent) {

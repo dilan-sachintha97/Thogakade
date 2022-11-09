@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="search customer from table">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="init item interface">
+      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/ItemTm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/ItemManagementForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/ItemManagementForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/tm/CustomerTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/CustomerTm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +107,8 @@
       <workItem from="1667984725413" duration="356000" />
       <workItem from="1667987253155" duration="101000" />
       <workItem from="1667988657399" duration="176000" />
-      <workItem from="1667989596166" duration="1557000" />
+      <workItem from="1667989596166" duration="1944000" />
+      <workItem from="1668005060963" duration="717000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -190,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667723566445</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="init item interface">
+      <created>1667991577083</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667991577083</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +231,7 @@
     <MESSAGE value="update customer from table" />
     <MESSAGE value="Add new customer to table" />
     <MESSAGE value="search customer from table" />
-    <option name="LAST_COMMIT_MESSAGE" value="search customer from table" />
+    <MESSAGE value="init item interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="init item interface" />
   </component>
 </project>

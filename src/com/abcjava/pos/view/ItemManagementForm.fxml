@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="423.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.ItemManagementFormController">
+<AnchorPane fx:id="itemManagementContext" prefHeight="423.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.ItemManagementFormController">
    <children>
       <JFXButton layoutX="15.0" layoutY="29.0" onAction="#btnBackToHome" style="-fx-background-color: #34495e;" text="Back To Home" textFill="WHITE">
          <cursor>
@@ -24,7 +23,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <JFXButton layoutX="535.0" layoutY="29.0" onAction="#btnAddNewitem" style="-fx-background-color: #34495e;" text="+ New Item" textFill="WHITE">
+      <JFXButton layoutX="535.0" layoutY="29.0" onAction="#btnAddNewItem" style="-fx-background-color: #34495e;" text="+ New Item" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
