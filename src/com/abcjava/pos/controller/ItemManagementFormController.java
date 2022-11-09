@@ -1,12 +1,17 @@
 package com.abcjava.pos.controller;
 
+import com.abcjava.pos.db.Database;
+import com.abcjava.pos.modal.Item;
+import com.abcjava.pos.modal.tm.CustomerTm;
+import com.abcjava.pos.modal.tm.ItemTm;
 import com.jfoenix.controls.JFXButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -20,12 +25,40 @@ public class ItemManagementFormController {
     public TextField txtQtyOnHand;
     public JFXButton btnSaveItem;
     public TextField txtSearchItem;
-    public TableView tblItemDetails;
-    public TableColumn colCode;
-    public TableColumn colDescription;
-    public TableColumn colUnitPrice;
-    public TableColumn colOptions;
+    public TableView<ItemTm> tblItemDetails;
+    public TableColumn<ItemTm,String> colCode;
+    public TableColumn<ItemTm,String>  colDescription;
+    public TableColumn <ItemTm,Double> colUnitPrice;
+    public TableColumn<ItemTm,Button>  colOptions;
     public AnchorPane itemManagementContext;
+    public TableColumn<ItemTm,Integer>  colQtyOnHand;
+    private String text = "";
+
+    public void initialize(){
+        colCode.setCellValueFactory(new PropertyValueFactory<>("code"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
+        colOptions.setCellValueFactory(new PropertyValueFactory<>("button"));
+
+        txtSearchItem.textProperty().addListener((observable, oldValue, newValue) -> {
+//            System.out.println(newValue);
+            setDataToTable(newValue);
+        });
+
+        tblItemDetails.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+//            System.out.println( newValue.getDescription());
+            selectedTableRowToTextField(newValue);
+        });
+    }
+
+    private void selectedTableRowToTextField(ItemTm itemTm) {
+        txtCode.setText(itemTm.getCode());
+        txtDescription.setText(itemTm.getDescription());
+        txtUnitPrice.setText(String.valueOf(itemTm.getUnitPrice()));
+        txtQtyOnHand.setText(String.valueOf(itemTm.getCode()));
+    }
+
 
     public void btnBackToHome(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) itemManagementContext.getScene().getWindow();
@@ -37,5 +70,42 @@ public class ItemManagementFormController {
     }
 
     public void btnSaveItemOnAction(ActionEvent actionEvent) {
+        setDataToDatabase();
+        setDataToTable(text);
+        clearField();
+    }
+
+    private void clearField() {
+        txtCode.clear();
+        txtDescription.clear();
+        txtUnitPrice.clear();
+        txtQtyOnHand.clear();
+    }
+
+    private void setDataToTable(String text) {
+        ObservableList<ItemTm> tmList = FXCollections.observableArrayList();
+        for (Item c:Database.itemList) {
+
+            //search text
+            if(c.getDescription().contains(text)){
+                Button button = new Button("Delete");
+                ItemTm itemTm = new ItemTm(c.getCode(), c.getDescription(), c.getUnitPrice(), c.getAtyOnHand(),button);
+                tmList.add(itemTm);
+            }
+
+        }
+
+        tblItemDetails.setItems(tmList);
+    }
+
+    private void setDataToDatabase() {
+        Item item = new Item(txtCode.getText(), txtDescription.getText(), Double.parseDouble(txtUnitPrice.getText()), Integer.parseInt(txtQtyOnHand.getText()));
+        boolean isSaved = Database.itemList.add(item);
+        if(isSaved){
+            new Alert(Alert.AlertType.INFORMATION, "item Saved").show();
+        }else{
+            new Alert(Alert.AlertType.INFORMATION, "Something wrong !");
+        }
+
     }
 }

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="init item interface">
-      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/ItemTm.java" afterDir="false" />
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/ItemManagementForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/ItemManagementForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/ItemTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/ItemTm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +42,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfoenix-8.0.8.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -108,7 +106,7 @@
       <workItem from="1667987253155" duration="101000" />
       <workItem from="1667988657399" duration="176000" />
       <workItem from="1667989596166" duration="1944000" />
-      <workItem from="1668005060963" duration="717000" />
+      <workItem from="1668005060963" duration="3895000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -201,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667991577083</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1">
+      <created>1668005854657</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1668005854657</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +226,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="set ui for customer" />
     <MESSAGE value="set date and time into dashboard" />
-    <MESSAGE value="1" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="4" />
@@ -232,6 +236,7 @@
     <MESSAGE value="Add new customer to table" />
     <MESSAGE value="search customer from table" />
     <MESSAGE value="init item interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="init item interface" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
