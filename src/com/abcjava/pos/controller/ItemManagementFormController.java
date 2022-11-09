@@ -48,7 +48,10 @@ public class ItemManagementFormController {
 
         tblItemDetails.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 //            System.out.println( newValue.getDescription());
-            selectedTableRowToTextField(newValue);
+            if(null!= newValue){
+                selectedTableRowToTextField(newValue);
+            }
+
         });
     }
 
@@ -57,6 +60,7 @@ public class ItemManagementFormController {
         txtDescription.setText(itemTm.getDescription());
         txtUnitPrice.setText(String.valueOf(itemTm.getUnitPrice()));
         txtQtyOnHand.setText(String.valueOf(itemTm.getCode()));
+        btnSaveItem.setText("Update Item");
     }
 
 
@@ -66,13 +70,27 @@ public class ItemManagementFormController {
     }
 
     public void btnAddNewItem(ActionEvent actionEvent) {
+        btnSaveItem.setText("save Item");
 
     }
 
     public void btnSaveItemOnAction(ActionEvent actionEvent) {
-        setDataToDatabase();
-        setDataToTable(text);
-        clearField();
+        if(btnSaveItem.getText().equalsIgnoreCase("Save Item")){ //save item
+            setDataToDatabase();
+            setDataToTable(text);
+            clearField();
+        }else{
+            for(int i=0; i<Database.itemList.size(); i++){
+                if(txtCode.getText().equalsIgnoreCase(Database.itemList.get(i).getCode())){
+                    Database.itemList.get(i).setDescription(txtDescription.getText());
+                    Database.itemList.get(i).setUnitPrice(Double.parseDouble(txtUnitPrice.getText()));
+                    Database.itemList.get(i).setAtyOnHand(Integer.parseInt(txtQtyOnHand.getText()));
+                }
+            }
+            setDataToTable(text);
+            clearField();
+        }
+
     }
 
     private void clearField() {

@@ -12,11 +12,11 @@ public class ItemTm {
     public ItemTm() {
     }
 
-    public ItemTm(String code, String description, double unitPrice, int atyOnHand, Button button) {
+    public ItemTm(String code, String description, double unitPrice, int qtyOnHand, Button button) {
         this.code = code;
         this.description = description;
         this.unitPrice = unitPrice;
-        this.qtyOnHand = atyOnHand;
+        this.qtyOnHand = qtyOnHand;
         this.button = button;
     }
 
