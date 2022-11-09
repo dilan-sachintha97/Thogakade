@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class ItemManagementFormController {
     public TextField txtCode;
@@ -71,6 +72,7 @@ public class ItemManagementFormController {
 
     public void btnAddNewItem(ActionEvent actionEvent) {
         btnSaveItem.setText("save Item");
+        clearField();
 
     }
 
@@ -109,6 +111,21 @@ public class ItemManagementFormController {
                 Button button = new Button("Delete");
                 ItemTm itemTm = new ItemTm(c.getCode(), c.getDescription(), c.getUnitPrice(), c.getAtyOnHand(),button);
                 tmList.add(itemTm);
+                button.setOnAction(event -> {
+//                    System.out.println(c.getDescription());
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to delete this item ?",
+                            ButtonType.YES,ButtonType.NO);
+                    Optional<ButtonType> buttonType = alert.showAndWait();
+                    if(buttonType.get().equals(ButtonType.YES)){
+                        boolean isDeleted = Database.itemList.remove(c);
+                        if(isDeleted){
+                            setDataToTable(text);
+                            new Alert(Alert.AlertType.INFORMATION, "Deleted Item !").show();
+                        }else {
+                            new Alert(Alert.AlertType.INFORMATION, "something wrong !").show();
+                        }
+                    }
+                });
             }
 
         }
