@@ -46,7 +46,8 @@ public class DashBordFormController {
     public void btnOrderManagementOnAction(ActionEvent actionEvent) {
     }
 
-    public void btnPlaceOrderManagement(ActionEvent actionEvent) {
+    public void btnPlaceOrderManagement(ActionEvent actionEvent) throws IOException {
+        setUI("PlaceOrderForm");
     }
 
     private void setUI(String ui) throws IOException {

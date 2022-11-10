@@ -54,6 +54,8 @@ public class CustomerManagementFormController {
                 searchText=newValue;
             searchCustomers(searchText);
         });
+
+        searchCustomers(searchText);
     }
 
     private void setData(CustomerTm tm) {
