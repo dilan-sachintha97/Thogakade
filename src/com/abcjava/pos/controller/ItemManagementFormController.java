@@ -2,7 +2,6 @@ package com.abcjava.pos.controller;
 
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Item;
-import com.abcjava.pos.modal.tm.CustomerTm;
 import com.abcjava.pos.modal.tm.ItemTm;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
@@ -14,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -88,7 +86,7 @@ public class ItemManagementFormController {
                 if(txtCode.getText().equalsIgnoreCase(Database.itemList.get(i).getCode())){
                     Database.itemList.get(i).setDescription(txtDescription.getText());
                     Database.itemList.get(i).setUnitPrice(Double.parseDouble(txtUnitPrice.getText()));
-                    Database.itemList.get(i).setAtyOnHand(Integer.parseInt(txtQtyOnHand.getText()));
+                    Database.itemList.get(i).setQtyOnHand(Integer.parseInt(txtQtyOnHand.getText()));
                 }
             }
             setDataToTable(text);
@@ -111,7 +109,7 @@ public class ItemManagementFormController {
             //search text
             if(c.getDescription().contains(text)){
                 Button button = new Button("Delete");
-                ItemTm itemTm = new ItemTm(c.getCode(), c.getDescription(), c.getUnitPrice(), c.getAtyOnHand(),button);
+                ItemTm itemTm = new ItemTm(c.getCode(), c.getDescription(), c.getUnitPrice(), c.getQtyOnHand(),button);
                 tmList.add(itemTm);
                 button.setOnAction(event -> {
 //                    System.out.println(c.getDescription());

@@ -7,10 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -19,22 +20,63 @@ import java.util.Date;
 public class PlaceOrderFormController {
     public TextField txtOrderId;
     public TextField txtOrderDate;
-    public TextField txtCode11;
-    public TextField txtCode111;
-    public TextField txtCode1111;
-    public TextField txtCode112;
-    public TextField txtCode1112;
-    public TextField txtCode11111;
-    public TextField txtCode11121;
     public ComboBox<String> cmbCustomerId;
     public ComboBox<String>cmbItemId;
     public AnchorPane placeOrderFormContext;
+    public TextField txtName;
+    public TextField txtAddress;
+    public TextField txtSalary;
+    public TextField txtDescription;
+    public TextField txtUnitPrice;
+    public TextField txtQty;
+    public TextField txtQtyOnHand;
+    public TableView tblCart;
+    public TableColumn colItemCode;
+    public TableColumn colDescription;
+    public TableColumn colUnitPrice;
+    public TableColumn colQty;
+    public TableColumn colTotal;
+    public TableColumn colOption;
 
     public void initialize(){
         setOrderDate();
         loadAllCustomersIds();
         loadAllItemsCode();
+
+        cmbCustomerId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if(null != newValue){
+                setCustomerDetailsToTextFields();
+            }
+        });
+
+        cmbItemId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if(null != newValue){
+                setItemDetailsToTextFields();
+            }
+        });
     }
+
+    private void setItemDetailsToTextFields() {
+        for(Item item : Database.itemList){
+            if(item.getCode().equals(cmbItemId.getValue())){
+                txtDescription.setText(item.getDescription());
+                txtUnitPrice.setText(String.valueOf(item.getUnitPrice()));
+                txtQtyOnHand.setText(String.valueOf(item.getQtyOnHand()));
+
+            }
+        }
+    }
+
+    private void setCustomerDetailsToTextFields() {
+        for(Customer c :Database.customerList){
+            if(c.getId().equals(cmbCustomerId.getValue())){
+                txtName.setText(c.getName());
+                txtAddress.setText(c.getAddress());
+                txtSalary.setText(String.valueOf(c.getSalary()));
+            }
+        }
+    }
+
 
     private void loadAllItemsCode() {
         for(Item item: Database.itemList){

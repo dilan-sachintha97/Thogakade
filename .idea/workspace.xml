@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="add order date">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/modal/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/PlaceOrderForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +108,7 @@
       <workItem from="1667989596166" duration="1944000" />
       <workItem from="1668005060963" duration="6273000" />
       <workItem from="1668015162289" duration="637000" />
-      <workItem from="1668049217265" duration="4874000" />
+      <workItem from="1668049217265" duration="7334000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -244,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668053325565</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="1">
+      <created>1668055425517</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668055425517</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,12 +278,12 @@
     <MESSAGE value="Add new customer to table" />
     <MESSAGE value="search customer from table" />
     <MESSAGE value="init item interface" />
-    <MESSAGE value="1" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="completed item form" />
     <MESSAGE value="init Oder Place Form" />
     <MESSAGE value="add order date" />
-    <option name="LAST_COMMIT_MESSAGE" value="add order date" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>

@@ -4,13 +4,13 @@ public class Item {
     private String code;
     private String description;
     private double unitPrice;
-    private int atyOnHand;
+    private int qtyOnHand;
 
-    public Item(String code, String description, double unitPrice, int atyOnHand) {
+    public Item(String code, String description, double unitPrice, int qtyOnHand) {
         this.code = code;
         this.description = description;
         this.unitPrice = unitPrice;
-        this.atyOnHand = atyOnHand;
+        this.qtyOnHand = qtyOnHand;
     }
 
     public Item() {
@@ -40,11 +40,11 @@ public class Item {
         this.unitPrice = unitPrice;
     }
 
-    public int getAtyOnHand() {
-        return atyOnHand;
+    public int getQtyOnHand() {
+        return qtyOnHand;
     }
 
-    public void setAtyOnHand(int atyOnHand) {
-        this.atyOnHand = atyOnHand;
+    public void setQtyOnHand(int qtyOnHand) {
+        this.qtyOnHand = qtyOnHand;
     }
 }

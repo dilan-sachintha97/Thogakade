@@ -37,27 +37,27 @@
          </font>
       </Label>
       <ComboBox fx:id="cmbCustomerId" layoutX="24.0" layoutY="109.0" prefHeight="25.0" prefWidth="116.0" promptText="Customer Id" />
-      <TextField fx:id="txtCode11" disable="true" layoutX="157.0" layoutY="109.0" prefHeight="25.0" prefWidth="151.0" promptText="Name" />
-      <TextField fx:id="txtCode111" disable="true" layoutX="327.0" layoutY="109.0" prefHeight="25.0" prefWidth="213.0" promptText="Address" />
-      <TextField fx:id="txtCode1111" disable="true" layoutX="561.0" layoutY="109.0" prefHeight="25.0" prefWidth="151.0" promptText="Salary" />
+      <TextField fx:id="txtName" disable="true" layoutX="157.0" layoutY="109.0" prefHeight="25.0" prefWidth="151.0" promptText="Name" />
+      <TextField fx:id="txtAddress" disable="true" layoutX="327.0" layoutY="109.0" prefHeight="25.0" prefWidth="213.0" promptText="Address" />
+      <TextField fx:id="txtSalary" disable="true" layoutX="561.0" layoutY="109.0" prefHeight="25.0" prefWidth="151.0" promptText="Salary" />
       <ComboBox fx:id="cmbItemId" layoutX="23.0" layoutY="167.0" prefHeight="25.0" prefWidth="116.0" promptText="Item Code" />
-      <TextField fx:id="txtCode112" disable="true" layoutX="156.0" layoutY="167.0" prefHeight="25.0" prefWidth="151.0" promptText="Description" />
-      <TextField fx:id="txtCode1112" disable="true" layoutX="326.0" layoutY="167.0" prefHeight="25.0" prefWidth="105.0" promptText="Unit Price" />
-      <TextField fx:id="txtCode11111" layoutX="560.0" layoutY="167.0" prefHeight="25.0" prefWidth="151.0" promptText="QTY" />
-      <TextField fx:id="txtCode11121" disable="true" layoutX="445.0" layoutY="167.0" prefHeight="25.0" prefWidth="105.0" promptText="QTY On Hand" />
+      <TextField fx:id="txtDescription" disable="true" layoutX="156.0" layoutY="167.0" prefHeight="25.0" prefWidth="151.0" promptText="Description" />
+      <TextField fx:id="txtUnitPrice" disable="true" layoutX="326.0" layoutY="167.0" prefHeight="25.0" prefWidth="105.0" promptText="Unit Price" />
+      <TextField fx:id="txtQty" layoutX="560.0" layoutY="167.0" prefHeight="25.0" prefWidth="151.0" promptText="QTY" />
+      <TextField fx:id="txtQtyOnHand" disable="true" layoutX="445.0" layoutY="167.0" prefHeight="25.0" prefWidth="105.0" promptText="QTY On Hand" />
       <JFXButton layoutX="631.0" layoutY="200.0" onAction="#btnAddToCartOnAction" style="-fx-background-color: #34495e;" text="Add To Cart" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </JFXButton>
-      <TableView layoutX="28.0" layoutY="240.0" prefHeight="200.0" prefWidth="681.0">
+      <TableView fx:id="tblCart" layoutX="28.0" layoutY="240.0" prefHeight="200.0" prefWidth="681.0">
         <columns>
-          <TableColumn prefWidth="83.0" text="Item Code" />
-          <TableColumn prefWidth="216.0" text="Description" />
-            <TableColumn prefWidth="95.0" text="Unit price" />
-            <TableColumn prefWidth="84.0" text="QTY" />
-            <TableColumn prefWidth="104.0" text="Total" />
-            <TableColumn prefWidth="98.0" text="Option" />
+          <TableColumn fx:id="colItemCode" prefWidth="83.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="216.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="95.0" text="Unit price" />
+            <TableColumn fx:id="colQty" prefWidth="84.0" text="QTY" />
+            <TableColumn fx:id="colTotal" prefWidth="104.0" text="Total" />
+            <TableColumn fx:id="colOption" prefWidth="98.0" text="Option" />
         </columns>
       </TableView>
       <Label layoutX="29.0" layoutY="458.0" text="Total" textFill="#e00909">
