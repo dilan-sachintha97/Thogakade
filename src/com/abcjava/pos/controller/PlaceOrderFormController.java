@@ -4,6 +4,7 @@ import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.modal.Item;
 import com.abcjava.pos.modal.tm.CartTm;
+import com.abcjava.pos.modal.tm.CustomerTm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 
 public class PlaceOrderFormController {
     public TextField txtOrderId;
@@ -123,6 +125,7 @@ public class PlaceOrderFormController {
         Button button = new Button("Delete");
 
         int row = isAlreadyExit(cmbItemId.getValue());
+
         if(row==-1){
             CartTm cartTm = new CartTm(cmbItemId.getValue(),txtDescription.getText(),unitPrice,qty,total,button);
             obList.add(cartTm);
@@ -135,8 +138,22 @@ public class PlaceOrderFormController {
             tblCart.refresh();
         }
             calculateTotal();
-            clearFields();
+//            clearFields();
             cmbItemId.requestFocus();
+
+            button.setOnAction(event -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure",ButtonType.YES,ButtonType.NO);
+                Optional<ButtonType> buttonType = alert.showAndWait();
+
+                if(buttonType.get()==ButtonType.YES){
+                    for(CartTm tm : obList){
+                            obList.remove(tm);
+                            calculateTotal();
+                            tblCart.refresh();
+                            return;
+                    }
+                }
+            });
     }
 
     private void clearFields() {
