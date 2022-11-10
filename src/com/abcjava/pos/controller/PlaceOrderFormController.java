@@ -114,20 +114,37 @@ public class PlaceOrderFormController {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashBordForm.fxml"))));
     }
 
+    ObservableList<CartTm> obList = FXCollections.observableArrayList();
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int qty = Integer.parseInt(txtQty.getText());
         double total = unitPrice* qty;
         Button button = new Button("Delete");
 
-        CartTm cartTm = new CartTm(cmbItemId.getValue(),txtDescription.getText(),unitPrice,qty,total,button);
-
-        ObservableList<CartTm> obList = FXCollections.observableArrayList();
-        obList.add(cartTm);
-
-        tblCart.setItems(obList);
+        int row = isAlreadyExit(cmbItemId.getValue());
+        if(row==-1){
+            CartTm cartTm = new CartTm(cmbItemId.getValue(),txtDescription.getText(),unitPrice,qty,total,button);
+            obList.add(cartTm);
+            tblCart.setItems(obList);
+        }else{
+            int tempQty = obList.get(row).getQty() + qty;
+            double tempTotal = unitPrice * tempQty;
+            obList.get(row).setQty(tempQty);
+            obList.get(row).setTotal(tempTotal);
+            tblCart.refresh();
+        }
 
     }
+
+    private int isAlreadyExit(String code) {
+        for(int i=0; i< obList.size(); i++){
+            if(obList.get(i).getCode().equals(code)){
+                return i;  // row number
+            }
+        }
+       return -1;
+    }
+
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
     }
