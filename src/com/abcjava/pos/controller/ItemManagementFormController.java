@@ -54,6 +54,8 @@ public class ItemManagementFormController {
             }
 
         });
+
+        setDataToTable(text);
     }
 
     private void selectedTableRowToTextField(ItemTm itemTm) {

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="init Oder Place Form">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="add order date">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/db/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/PlaceOrderForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
       <workItem from="1667989596166" duration="1944000" />
       <workItem from="1668005060963" duration="6273000" />
       <workItem from="1668015162289" duration="637000" />
-      <workItem from="1668049217265" duration="3138000" />
+      <workItem from="1668049217265" duration="4874000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -236,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668051114777</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add order date">
+      <created>1668053325565</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1668053325565</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +277,7 @@
     <MESSAGE value="3" />
     <MESSAGE value="completed item form" />
     <MESSAGE value="init Oder Place Form" />
-    <option name="LAST_COMMIT_MESSAGE" value="init Oder Place Form" />
+    <MESSAGE value="add order date" />
+    <option name="LAST_COMMIT_MESSAGE" value="add order date" />
   </component>
 </project>

@@ -16,5 +16,11 @@ public class Database {
         customerList.add(new Customer("C003","Nuwam","Matara",45000));
         customerList.add(new Customer("C004","Malith","Galle",50000));
         customerList.add(new Customer("C005","Dilan","Kottawa",70000));
+
+        itemList.add(new Item("I-001","Description 1",25,20));
+        itemList.add(new Item("I-002","Description 2",60,8));
+        itemList.add(new Item("I-003","Description 3",80,5));
+        itemList.add(new Item("I-004","Description 4",100,2));
+        itemList.add(new Item("I-005","Description 5",350,6));
     }
 }
