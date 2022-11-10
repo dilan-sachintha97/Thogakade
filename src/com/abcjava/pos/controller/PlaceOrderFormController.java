@@ -38,6 +38,7 @@ public class PlaceOrderFormController {
     public TableColumn<CartTm,Integer>  colQty;
     public TableColumn<CartTm,Double>  colTotal;
     public TableColumn<CartTm,Button>  colOption;
+    public Label lblTotal;
 
     public void initialize(){
 
@@ -133,7 +134,16 @@ public class PlaceOrderFormController {
             obList.get(row).setTotal(tempTotal);
             tblCart.refresh();
         }
+            calculateTotal();
+            clearFields();
+            cmbItemId.requestFocus();
+    }
 
+    private void clearFields() {
+        txtDescription.clear();
+        txtUnitPrice.clear();
+        txtQtyOnHand.clear();
+        txtQty.clear();
     }
 
     private int isAlreadyExit(String code) {
@@ -145,6 +155,13 @@ public class PlaceOrderFormController {
        return -1;
     }
 
+    private void calculateTotal(){
+        double total = 0;
+        for(CartTm cartTm: obList){
+            total = total + cartTm.getTotal();
+        }
+        lblTotal.setText(String.valueOf(total));
+    }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
     }

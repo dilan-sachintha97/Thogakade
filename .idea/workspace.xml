@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="4">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/PlaceOrderForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,8 @@
       <workItem from="1668015162289" duration="637000" />
       <workItem from="1668049217265" duration="9822000" />
       <workItem from="1668076137537" duration="1393000" />
-      <workItem from="1668078325155" duration="1070000" />
+      <workItem from="1668078325155" duration="1397000" />
+      <workItem from="1668080776600" duration="1711000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -270,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668059962385</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="5">
+      <created>1668079422607</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1668079422607</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +299,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="set ui for customer" />
     <MESSAGE value="set date and time into dashboard" />
-    <MESSAGE value="5" />
     <MESSAGE value="6" />
     <MESSAGE value="delete customer from table" />
     <MESSAGE value="update customer from table" />
@@ -304,6 +312,7 @@
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4" />
+    <MESSAGE value="5" />
+    <option name="LAST_COMMIT_MESSAGE" value="5" />
   </component>
 </project>
