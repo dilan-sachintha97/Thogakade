@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="2">
-      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/modal/tm/CartTm.java" afterDir="false" />
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +105,7 @@
       <workItem from="1667989596166" duration="1944000" />
       <workItem from="1668005060963" duration="6273000" />
       <workItem from="1668015162289" duration="637000" />
-      <workItem from="1668049217265" duration="8665000" />
+      <workItem from="1668049217265" duration="9531000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -254,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668057967041</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="3">
+      <created>1668059079701</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1668059079701</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,12 +289,12 @@
     <MESSAGE value="Add new customer to table" />
     <MESSAGE value="search customer from table" />
     <MESSAGE value="init item interface" />
-    <MESSAGE value="3" />
     <MESSAGE value="completed item form" />
     <MESSAGE value="init Oder Place Form" />
     <MESSAGE value="add order date" />
     <MESSAGE value="1" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="3" />
+    <option name="LAST_COMMIT_MESSAGE" value="3" />
   </component>
 </project>

@@ -3,13 +3,14 @@ package com.abcjava.pos.controller;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.modal.Item;
+import com.abcjava.pos.modal.tm.CartTm;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -30,15 +31,24 @@ public class PlaceOrderFormController {
     public TextField txtUnitPrice;
     public TextField txtQty;
     public TextField txtQtyOnHand;
-    public TableView tblCart;
-    public TableColumn colItemCode;
-    public TableColumn colDescription;
-    public TableColumn colUnitPrice;
-    public TableColumn colQty;
-    public TableColumn colTotal;
-    public TableColumn colOption;
+    public TableView<CartTm> tblCart;
+    public TableColumn<CartTm,String> colItemCode;
+    public TableColumn<CartTm,String>  colDescription;
+    public TableColumn<CartTm,Double>  colUnitPrice;
+    public TableColumn<CartTm,Integer>  colQty;
+    public TableColumn<CartTm,Double>  colTotal;
+    public TableColumn<CartTm,Button>  colOption;
 
     public void initialize(){
+
+        colItemCode.setCellValueFactory(new PropertyValueFactory<>("code"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        colOption.setCellValueFactory(new PropertyValueFactory<>("button"));
+
+
         setOrderDate();
         loadAllCustomersIds();
         loadAllItemsCode();
@@ -105,6 +115,18 @@ public class PlaceOrderFormController {
     }
 
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
+        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        int qty = Integer.parseInt(txtQty.getText());
+        double total = unitPrice* qty;
+        Button button = new Button("Delete");
+
+        CartTm cartTm = new CartTm(cmbItemId.getValue(),txtDescription.getText(),unitPrice,qty,total,button);
+
+        ObservableList<CartTm> obList = FXCollections.observableArrayList();
+        obList.add(cartTm);
+
+        tblCart.setItems(obList);
+
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
