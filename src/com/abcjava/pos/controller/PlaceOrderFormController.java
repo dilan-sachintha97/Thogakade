@@ -167,6 +167,12 @@ public class PlaceOrderFormController {
         } else {
             int tempQty = obList.get(row).getQty() + qty;
             double tempTotal = unitPrice * tempQty;
+
+            if(!checkQty(cmbItemId.getValue(), tempQty)){
+                new Alert(Alert.AlertType.WARNING,"Out of Stock !").show();
+                return;
+            }
+
             obList.get(row).setQty(tempQty);
             obList.get(row).setTotal(tempTotal);
             tblCart.refresh();
