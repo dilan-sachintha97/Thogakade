@@ -135,9 +135,24 @@ public class PlaceOrderFormController {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashBordForm.fxml"))));
     }
 
+    private boolean checkQty(String code, int qty){
+        for(Item i: Database.itemList){
+            if(code.equals(i.getCode())){
+                if(i.getQtyOnHand()>= qty){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     ObservableList<CartTm> obList = FXCollections.observableArrayList();
-
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
+
+        if(!checkQty(cmbItemId.getValue(), Integer.parseInt(txtQty.getText()))){
+            new Alert(Alert.AlertType.WARNING,"Out of Stock !").show();
+            return;
+        }
+
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int qty = Integer.parseInt(txtQty.getText());
         double total = unitPrice * qty;
