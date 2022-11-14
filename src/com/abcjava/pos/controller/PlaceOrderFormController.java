@@ -59,6 +59,7 @@ public class PlaceOrderFormController {
         setOrderDate();
         loadAllCustomersIds();
         loadAllItemsCode();
+        setOrderId();
 
         cmbCustomerId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (null != newValue) {
@@ -71,6 +72,19 @@ public class PlaceOrderFormController {
                 setItemDetailsToTextFields();
             }
         });
+
+    }
+
+    private void setOrderId() {
+        if(Database.ordersList.isEmpty()){
+            txtOrderId.setText("D-1");
+            return;
+        }
+        String tempOrderId = Database.ordersList.get(Database.ordersList.size()-1).getOrderId(); //  D-5
+        String[] numArray = tempOrderId.split("-"); //  [D,5]
+        int numPart = Integer.parseInt(numArray[1]);  //   5
+        int finalizeNumberOfOderId = numPart+1;
+        txtOrderId.setText("D-" + finalizeNumberOfOderId);
     }
 
     private void setItemDetailsToTextFields() {
@@ -224,7 +238,8 @@ public class PlaceOrderFormController {
         txtSalary.clear();
 
         clearFields();
-        cmbItemId.requestFocus();
+        cmbCustomerId.requestFocus();
+        setOrderId();
     }
 
 }
