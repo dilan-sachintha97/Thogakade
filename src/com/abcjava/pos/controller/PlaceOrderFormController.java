@@ -3,8 +3,9 @@ package com.abcjava.pos.controller;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.modal.Item;
-import com.abcjava.pos.modal.tm.CartTm;
-import com.abcjava.pos.modal.tm.CustomerTm;
+import com.abcjava.pos.modal.ItemDetails;
+import com.abcjava.pos.modal.Order;
+import com.abcjava.pos.view.tm.CartTm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,14 +18,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Optional;
+
+import static com.abcjava.pos.db.Database.ordersList;
 
 public class PlaceOrderFormController {
     public TextField txtOrderId;
     public TextField txtOrderDate;
     public ComboBox<String> cmbCustomerId;
-    public ComboBox<String>cmbItemId;
+    public ComboBox<String> cmbItemId;
     public AnchorPane placeOrderFormContext;
     public TextField txtName;
     public TextField txtAddress;
@@ -34,15 +38,15 @@ public class PlaceOrderFormController {
     public TextField txtQty;
     public TextField txtQtyOnHand;
     public TableView<CartTm> tblCart;
-    public TableColumn<CartTm,String> colItemCode;
-    public TableColumn<CartTm,String>  colDescription;
-    public TableColumn<CartTm,Double>  colUnitPrice;
-    public TableColumn<CartTm,Integer>  colQty;
-    public TableColumn<CartTm,Double>  colTotal;
-    public TableColumn<CartTm,Button>  colOption;
+    public TableColumn<CartTm, String> colItemCode;
+    public TableColumn<CartTm, String> colDescription;
+    public TableColumn<CartTm, Double> colUnitPrice;
+    public TableColumn<CartTm, Integer> colQty;
+    public TableColumn<CartTm, Double> colTotal;
+    public TableColumn<CartTm, Button> colOption;
     public Label lblTotal;
 
-    public void initialize(){
+    public void initialize() {
 
         colItemCode.setCellValueFactory(new PropertyValueFactory<>("code"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -57,21 +61,21 @@ public class PlaceOrderFormController {
         loadAllItemsCode();
 
         cmbCustomerId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if(null != newValue){
+            if (null != newValue) {
                 setCustomerDetailsToTextFields();
             }
         });
 
         cmbItemId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if(null != newValue){
+            if (null != newValue) {
                 setItemDetailsToTextFields();
             }
         });
     }
 
     private void setItemDetailsToTextFields() {
-        for(Item item : Database.itemList){
-            if(item.getCode().equals(cmbItemId.getValue())){
+        for (Item item : Database.itemList) {
+            if (item.getCode().equals(cmbItemId.getValue())) {
                 txtDescription.setText(item.getDescription());
                 txtUnitPrice.setText(String.valueOf(item.getUnitPrice()));
                 txtQtyOnHand.setText(String.valueOf(item.getQtyOnHand()));
@@ -81,8 +85,8 @@ public class PlaceOrderFormController {
     }
 
     private void setCustomerDetailsToTextFields() {
-        for(Customer c :Database.customerList){
-            if(c.getId().equals(cmbCustomerId.getValue())){
+        for (Customer c : Database.customerList) {
+            if (c.getId().equals(cmbCustomerId.getValue())) {
                 txtName.setText(c.getName());
                 txtAddress.setText(c.getAddress());
                 txtSalary.setText(String.valueOf(c.getSalary()));
@@ -92,13 +96,13 @@ public class PlaceOrderFormController {
 
 
     private void loadAllItemsCode() {
-        for(Item item: Database.itemList){
+        for (Item item : Database.itemList) {
             cmbItemId.getItems().add(item.getCode());
         }
     }
 
     private void loadAllCustomersIds() {
-        for(Customer c : Database.customerList){
+        for (Customer c : Database.customerList) {
             cmbCustomerId.getItems().add(c.getId());
         }
     }
@@ -118,42 +122,43 @@ public class PlaceOrderFormController {
     }
 
     ObservableList<CartTm> obList = FXCollections.observableArrayList();
+
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int qty = Integer.parseInt(txtQty.getText());
-        double total = unitPrice* qty;
+        double total = unitPrice * qty;
         Button button = new Button("Delete");
 
         int row = isAlreadyExit(cmbItemId.getValue());
 
-        if(row==-1){
-            CartTm cartTm = new CartTm(cmbItemId.getValue(),txtDescription.getText(),unitPrice,qty,total,button);
+        if (row == -1) {
+            CartTm cartTm = new CartTm(cmbItemId.getValue(), txtDescription.getText(), unitPrice, qty, total, button);
             obList.add(cartTm);
             tblCart.setItems(obList);
-        }else{
+        } else {
             int tempQty = obList.get(row).getQty() + qty;
             double tempTotal = unitPrice * tempQty;
             obList.get(row).setQty(tempQty);
             obList.get(row).setTotal(tempTotal);
             tblCart.refresh();
         }
-            calculateTotal();
+        calculateTotal();
 //            clearFields();
-            cmbItemId.requestFocus();
+        cmbItemId.requestFocus();
 
-            button.setOnAction(event -> {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure",ButtonType.YES,ButtonType.NO);
-                Optional<ButtonType> buttonType = alert.showAndWait();
+        button.setOnAction(event -> {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure", ButtonType.YES, ButtonType.NO);
+            Optional<ButtonType> buttonType = alert.showAndWait();
 
-                if(buttonType.get()==ButtonType.YES){
-                    for(CartTm tm : obList){
-                            obList.remove(tm);
-                            calculateTotal();
-                            tblCart.refresh();
-                            return;
-                    }
+            if (buttonType.get() == ButtonType.YES) {
+                for (CartTm tm : obList) {
+                    obList.remove(tm);
+                    calculateTotal();
+                    tblCart.refresh();
+                    return;
                 }
-            });
+            }
+        });
     }
 
     private void clearFields() {
@@ -164,23 +169,53 @@ public class PlaceOrderFormController {
     }
 
     private int isAlreadyExit(String code) {
-        for(int i=0; i< obList.size(); i++){
-            if(obList.get(i).getCode().equals(code)){
+        for (int i = 0; i < obList.size(); i++) {
+            if (obList.get(i).getCode().equals(code)) {
                 return i;  // row number
             }
         }
-       return -1;
+        return -1;
     }
 
-    private void calculateTotal(){
+    private void calculateTotal() {
         double total = 0;
-        for(CartTm cartTm: obList){
+        for (CartTm cartTm : obList) {
             total = total + cartTm.getTotal();
         }
         lblTotal.setText(String.valueOf(total));
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+        if (obList.isEmpty()) return;  // obList ak empty nam JVM aka methanin ehata yanna apa
+        ArrayList<ItemDetails> itemDetailsList = new ArrayList<>();
+        for (CartTm cartTm : obList) {
+            ItemDetails itemDetails = new ItemDetails(cartTm.getCode(), cartTm.getUnitPrice(), cartTm.getQty());
+            itemDetailsList.add(itemDetails);
+        }
 
+        Order order = new Order(txtOrderId.getText(),
+                new Date(),
+                Double.parseDouble(lblTotal.getText()),
+                cmbItemId.getValue(),
+                itemDetailsList);
+
+        ordersList.add(order);
+
+        System.out.println( order.getTotalCost());
+
+        clearAll();
     }
+
+    private void clearAll() {
+        obList.clear();
+        calculateTotal();
+
+        txtName.clear();
+        txtAddress.clear();
+        txtSalary.clear();
+
+        clearFields();
+    }
+
 }
+

@@ -2,6 +2,7 @@ package com.abcjava.pos.db;
 
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.modal.Item;
+import com.abcjava.pos.modal.Order;
 
 import java.util.ArrayList;
 
@@ -9,6 +10,8 @@ public class Database {
     public static ArrayList<Customer> customerList = new ArrayList<Customer>();
 
     public static ArrayList<Item> itemList = new ArrayList<Item>();
+
+    public static ArrayList<Order> ordersList = new ArrayList<>();
 
     static {
         customerList.add(new Customer("C001","Nimal","Matara",25000));

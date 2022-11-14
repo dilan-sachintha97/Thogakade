@@ -2,7 +2,7 @@ package com.abcjava.pos.controller;
 
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
-import com.abcjava.pos.modal.tm.CustomerTm;
+import com.abcjava.pos.view.tm.CustomerTm;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
