@@ -200,10 +200,19 @@ public class PlaceOrderFormController {
                 itemDetailsList);
 
         ordersList.add(order);
-
-        System.out.println( order.getTotalCost());
-
+        manageQty();
         clearAll();
+    }
+
+    private void manageQty() {
+        for(CartTm cartTm : obList){
+            for(Item item : Database.itemList){
+                if(cartTm.getCode().equals(item.getCode())){
+                    item.setQtyOnHand(item.getQtyOnHand()-cartTm.getQty());
+                    break;
+                }
+            }
+        }
     }
 
     private void clearAll() {
@@ -215,6 +224,7 @@ public class PlaceOrderFormController {
         txtSalary.clear();
 
         clearFields();
+        cmbItemId.requestFocus();
     }
 
 }
