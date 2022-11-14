@@ -237,6 +237,11 @@ public class PlaceOrderFormController {
         txtAddress.clear();
         txtSalary.clear();
 
+        //=======================
+        cmbCustomerId.setValue(null);
+        cmbItemId.setValue(null);
+        //=======================
+
         clearFields();
         cmbCustomerId.requestFocus();
         setOrderId();
