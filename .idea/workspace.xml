@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="3">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="4">
+      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/OderDetailsFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/OderDetailsForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +122,7 @@
       <workItem from="1668617122459" duration="36000" />
       <workItem from="1668617265026" duration="11000" />
       <workItem from="1668658085359" duration="163000" />
+      <workItem from="1668659932285" duration="1684000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -353,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668413459882</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="4">
+      <created>1668660041018</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1668660041018</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +392,6 @@
     <MESSAGE value="add order date" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
-    <MESSAGE value="4" />
     <MESSAGE value="5" />
     <MESSAGE value="6" />
     <MESSAGE value="7" />
@@ -393,6 +401,7 @@
     <MESSAGE value="set oder id" />
     <MESSAGE value="check stock before add to cart" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="4" />
+    <option name="LAST_COMMIT_MESSAGE" value="4" />
   </component>
 </project>
