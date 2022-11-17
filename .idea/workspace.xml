@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="created oder details form">
-      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/tm/OderTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/DashBordFormController.java" afterDir="false" />
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/DashBordFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/OderDetailsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/OderDetailsFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/view/OderDetailsForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/view/OderDetailsForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +121,7 @@
       <workItem from="1668617122459" duration="36000" />
       <workItem from="1668617265026" duration="11000" />
       <workItem from="1668658085359" duration="163000" />
-      <workItem from="1668659932285" duration="3271000" />
+      <workItem from="1668659932285" duration="3607000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -371,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668661773131</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="1">
+      <created>1668663326924</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1668663326924</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,9 +413,9 @@
     <MESSAGE value="set qty function" />
     <MESSAGE value="set oder id" />
     <MESSAGE value="check stock before add to cart" />
-    <MESSAGE value="1" />
     <MESSAGE value="4" />
     <MESSAGE value="created oder details form" />
-    <option name="LAST_COMMIT_MESSAGE" value="created oder details form" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>

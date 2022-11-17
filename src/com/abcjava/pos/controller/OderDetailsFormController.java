@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -29,6 +30,17 @@ public class OderDetailsFormController {
     public AnchorPane oderDetailsFormContext;
 
     public void initialize(){
+        colOderId.setCellValueFactory(new PropertyValueFactory<>("oderId"));
+        colCustomer.setCellValueFactory(new PropertyValueFactory<>("customerName"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("oderDate"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        colOptions.setCellValueFactory(new PropertyValueFactory<>("button"));
+
+        loadOrders();
+
+    }
+
+    private void loadOrders() {
         ObservableList<OderTm> obsOderList = FXCollections.observableArrayList();
         for(Order order : Database.ordersList){
             Button btn = new Button("View more");
