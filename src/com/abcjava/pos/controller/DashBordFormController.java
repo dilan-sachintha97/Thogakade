@@ -43,7 +43,8 @@ public class DashBordFormController {
         setUI("ItemManagementForm");
     }
 
-    public void btnOrderManagementOnAction(ActionEvent actionEvent) {
+    public void btnOrderManagementOnAction(ActionEvent actionEvent) throws IOException {
+        setUI("OderDetailsForm");
     }
 
     public void btnPlaceOrderManagement(ActionEvent actionEvent) throws IOException {
