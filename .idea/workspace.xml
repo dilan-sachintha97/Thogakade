@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="check stock before add to cart">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
     </list>
@@ -110,7 +110,17 @@
       <workItem from="1668078325155" duration="1397000" />
       <workItem from="1668080776600" duration="7158000" />
       <workItem from="1668186112139" duration="1624000" />
-      <workItem from="1668395072722" duration="11772000" />
+      <workItem from="1668395072722" duration="12167000" />
+      <workItem from="1668586787579" duration="42000" />
+      <workItem from="1668592212681" duration="168000" />
+      <workItem from="1668594150915" duration="97000" />
+      <workItem from="1668595266398" duration="360000" />
+      <workItem from="1668597423192" duration="184000" />
+      <workItem from="1668601650002" duration="411000" />
+      <workItem from="1668616370536" duration="153000" />
+      <workItem from="1668617122459" duration="36000" />
+      <workItem from="1668617265026" duration="11000" />
+      <workItem from="1668658085359" duration="163000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -336,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668408861745</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="1">
+      <created>1668413459882</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1668413459882</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,8 +391,8 @@
     <MESSAGE value="done place oder function" />
     <MESSAGE value="set qty function" />
     <MESSAGE value="set oder id" />
-    <MESSAGE value="1" />
     <MESSAGE value="check stock before add to cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="check stock before add to cart" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
